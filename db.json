@@ -1,0 +1,39 @@
+{
+  "cats": [
+    {
+      "id": "1",
+      "name": "Tom",
+      "weight": 4.5,
+      "color": "gray",
+      "gender": 1
+    },
+    {
+      "id": "2",
+      "name": "Jerry",
+      "weight": 3,
+      "color": "black",
+      "gender": 1
+    },
+    {
+      "id": "3",
+      "name": "Mango",
+      "weight": 5,
+      "color": "orange",
+      "gender": 1
+    },
+    {
+      "id": "4",
+      "name": "Jeny",
+      "weight": 3,
+      "color": "white",
+      "gender": 0
+    },
+    {
+      "id": 0,
+      "name": "Tomas",
+      "weight": null,
+      "color": "gray",
+      "gender": 1
+    }
+  ]
+}
