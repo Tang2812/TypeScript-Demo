@@ -29,9 +29,23 @@
       "gender": 0
     },
     {
-      "id": 0,
-      "name": "Tomas",
-      "weight": null,
+      "id": "41",
+      "name": "horn",
+      "weight": 2,
+      "color": "gray",
+      "gender": 1
+    },
+    {
+      "id": "411",
+      "name": "Ehehe",
+      "weight": 2,
+      "color": "gray",
+      "gender": 1
+    },
+    {
+      "id": "411",
+      "name": "Tom",
+      "weight": 4,
       "color": "gray",
       "gender": 1
     }

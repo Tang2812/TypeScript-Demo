@@ -1,4 +1,3 @@
-// models/cat.ts
 export class Cat {
   constructor(
     public id: number,

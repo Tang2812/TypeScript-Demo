@@ -22,3 +22,34 @@ h1 {
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.form__container {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-information {
+  width: 60%;
+}
+
+.display--flex {
+  display: flex;
+}
+
+.display--none {
+  display: none;
+}
+
+.form-footer {
+  gap: 8px
+}
+
+.error-message {
+  color: red;
+}
+
+#form__btn-update {
+  display: none;
+}

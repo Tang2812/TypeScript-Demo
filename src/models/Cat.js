@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Cat = void 0;
-// models/cat.ts
 class Cat {
     constructor(id, name, weight, color, gender) {
         this.id = id;
