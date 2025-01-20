@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     buttonClose.addEventListener('click', () => {
         closeInformationForm(formContainer, catForm);
     });
+    /**
+     * when user submit form to create a new cat
+     */
     catForm.addEventListener('submit', (event) => __awaiter(void 0, void 0, void 0, function* () {
         event.preventDefault();
         const formData = new FormData(catForm);
@@ -48,12 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }));
 });
+/**
+ *close form and resev value in form
+ * @param formContainer
+ * @param form
+ */
 function closeInformationForm(formContainer, form) {
     formContainer.classList.remove('display--flex');
     formContainer.classList.add('display--none');
     form.reset();
 }
 ;
+/**
+ *open form
+ * @param formContainer
+ */
 function openInformationForm(formContainer) {
     formContainer.classList.remove('display--none');
     formContainer.classList.add('display--flex');

@@ -66,14 +66,17 @@ class CatView {
             }));
         });
     }
+    //  show message error to toast
     showError(message) {
         notiflix_1.default.Notify.failure(message);
     }
     ;
+    //  show message success to toast
     showSuccess(message) {
         notiflix_1.default.Notify.success(message);
     }
     ;
+    // validate value when user input
     validateCatInfor(nameErrMessage, weighErrtMessage) {
         const nameMessage = document.querySelector('#name-error');
         const weightMessage = document.querySelector('#weight-error');
@@ -95,6 +98,7 @@ class CatView {
         document.getElementById('gender').value = cat.gender.toString();
     }
     ;
+    //
     saveCat(catId) {
         return __awaiter(this, void 0, void 0, function* () {
             const catForm = document.getElementById('cat-form');

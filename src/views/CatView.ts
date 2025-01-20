@@ -6,7 +6,10 @@ import { closeInformationForm } from "..";
 export class CatView {
   private catListElement = document.querySelector('#cat-list')!.getElementsByTagName('tbody')[0];
 
-
+  /**
+   * set list data to UI, add event for delete button and detail button
+   * @param cats
+   */
   displayCats(cats: Cat[]): void {
     this.catListElement.innerHTML = '';
     cats.forEach((cat, index) => {
@@ -26,7 +29,7 @@ export class CatView {
     })
     Notiflix.Notify.success("fetch data success!!")
 
-    // Add delete event
+    // Add delete event to delete button
     const deleteButtons = this.catListElement.querySelectorAll('#btn-delete');
     deleteButtons.forEach(button => {
       button.addEventListener('click', async (event) => {
@@ -36,7 +39,7 @@ export class CatView {
       })
     });
 
-    // add view information event
+    // add view information event to detail button
     const detailButton = this.catListElement.querySelectorAll('#btn-detail');
     const formContainer = document.querySelector('.form__container') as HTMLElement;
     detailButton.forEach(button => {
@@ -56,17 +59,28 @@ export class CatView {
 
   }
 
-  //  show message error to toast
+  /**
+   * show failed message
+   * @param message
+   */
   showError(message: string) {
     Notiflix.Notify.failure(message);
   };
 
-  //  show message success to toast
+  /**
+   *show success message
+   * @param message
+   */
   showSuccess(message: string) {
     Notiflix.Notify.success(message);
   };
 
-  // validate value when user input
+  /**
+   * set error message to input box
+   * @param nameErrMessage
+   * @param weighErrtMessage
+   * @returns true if not have any error, false if have error
+   */
   validateCatInfor(nameErrMessage: string, weighErrtMessage: string): boolean {
     const nameMessage = document.querySelector('#name-error') as HTMLElement;
     const weightMessage = document.querySelector('#weight-error') as HTMLElement;
@@ -79,7 +93,10 @@ export class CatView {
     }
   };
 
-  // set infomation to form
+  /**
+   * set infor mation to form
+   * @param cat
+   */
   setCatInformation(cat: Cat): void {
     (document.getElementById('name') as HTMLInputElement).value = cat.name;
     (document.getElementById('weight') as HTMLInputElement).value = cat.weight.toString();
@@ -87,7 +104,10 @@ export class CatView {
     (document.getElementById('gender') as HTMLInputElement).value = cat.gender.toString();
   };
 
-//
+  /**
+   *get data form form, validate, close form and do update
+   * @param catId
+   */
   async saveCat(catId: number): Promise<void> {
     const catForm = document.getElementById('cat-form') as HTMLFormElement;
     const formContainer = document.querySelector('.form__container') as HTMLElement;
