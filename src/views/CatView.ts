@@ -27,7 +27,7 @@ export class CatView {
       `;
       this.catListElement.appendChild(row);
     })
-    Notiflix.Notify.success("fetch data success!!")
+    Notiflix.Notify.success("fetch data successfully!!")
 
     // Add delete event to delete button
     const deleteButtons = this.catListElement.querySelectorAll('#btn-delete');

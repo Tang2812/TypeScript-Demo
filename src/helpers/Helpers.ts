@@ -34,7 +34,7 @@ export class Helper {
     try {
       const cats = await this.getAllCat();
       const maxId = cats.reduce((max, cat) => cat.id > max ? cat.id : max, 0);
-      cat.id = maxId;
+      cat.id = maxId + 1;
       const response = await axios.post(this.apiUrl, cat);
       return true;
     } catch (err) {
@@ -42,11 +42,11 @@ export class Helper {
       return false;
     }
   }
-/**
- * get data of cat by catId
- * @param catId
- * @returns a Cat or null
- */
+  /**
+   * get data of cat by catId
+   * @param catId
+   * @returns a Cat or null
+   */
   async getCatById(catId: number): Promise<Cat | null> {
     try {
       const response = await axios.get(`${this.apiUrl}/${catId}`);
@@ -86,11 +86,11 @@ export class Helper {
     };
   }
 
-/**
- * delete cat by id
- * @param catId
- * @returns  status (true if success or false if fail)
- */
+  /**
+   * delete cat by id
+   * @param catId
+   * @returns  status (true if success or false if fail)
+   */
   async deleteCat(catId: number): Promise<boolean> {
     try {
       const response = await axios.delete(`${this.apiUrl}/${catId}`);
