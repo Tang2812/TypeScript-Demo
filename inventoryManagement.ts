@@ -25,7 +25,7 @@ class PerishableItem extends Item {
         super(id, name, price, quantity);
     }
 
-    getTotalValue(): number {
+    override getTotalValue(): number {
         const currentDate = new Date();
         if (currentDate > this.expirationDate) {
             return 0;
@@ -47,12 +47,12 @@ class DigitalItem extends Item {
         super(id, name, price, quantity);
     }
 
-    getTotalValue(): number {
+   override getTotalValue(): number {
         return this.price * this.quantity;
     }
 }
 
-// Inventory 
+// Inventory
 class Inventory {
     private items: Item[] = [];
 
@@ -75,7 +75,7 @@ class Inventory {
 }
 
 
-// Example 
+// Example
 const inventory = new Inventory();
 
 const item = new Item(1, "TV Sony", 20, 5);

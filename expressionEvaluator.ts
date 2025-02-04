@@ -1,7 +1,7 @@
 /**
  * split the spaces and changes string to an array of token (ex: ""3 + 5 * (2 - 8)" -> ["3", "+", "5", "*", "(2", "-", "8)"]")
- * @param expression 
- * @returns 
+ * @param expression
+ * @returns
  */
 function splitToTokens(expression: string): string[] {
     const tokens: string[] = [];
@@ -30,8 +30,8 @@ function splitToTokens(expression: string): string[] {
 
 /**
  * change from array of token to Postfix Expression
- * @param tokens 
- * @returns 
+ * @param tokens
+ * @returns
  */
 function toPostfixExpression(tokens: string[]): string[] {
     const outputQueue: string[] = [];
@@ -44,7 +44,7 @@ function toPostfixExpression(tokens: string[]): string[] {
         } else if ('+-*/'.includes(token)) {
             while (
                 operatorStack.length > 0 &&
-                operatorPrecedence[operatorStack[operatorStack.length - 1]] >= operatorPrecedence[token]
+                operatorPrecedence[operatorStack[operatorStack.length - 1]!]! >= operatorPrecedence[token]!
             ) {
                 outputQueue.push(operatorStack.pop()!);
             }
@@ -92,7 +92,7 @@ function calculate(rpn: string[]): number {
         }
     }
 
-    return resultStack[0];
+    return resultStack[0]!;
 }
 
 function evaluateExpression(expression: string): number {

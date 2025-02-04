@@ -4,12 +4,12 @@ function checkSudoku(sudoku: string[][]): boolean {
     for (const row in Counts) {
         let numberInRow: string[] = [];
         for (const col in Counts) {
-            const item = sudoku[row][col];
-            if (numberInRow.includes(item)) {
+            const item = sudoku[row]![col];
+            if (numberInRow.includes(item!)) {
                 return false;
             } else {
                 if (item !== ".") {
-                    numberInRow.push(item)
+                    numberInRow.push(item!)
                 }
             }
         }
@@ -19,12 +19,12 @@ function checkSudoku(sudoku: string[][]): boolean {
     for (const col in Counts) {
         let numberInCol: string[] = [];
         for (const row in Counts) {
-            const item = sudoku[row][col];
-            if (numberInCol.includes(item)) {
+            const item = sudoku[row]![col];
+            if (numberInCol.includes(item!)) {
                 return false;
             } else {
                 if (item !== ".") {
-                    numberInCol.push(item)
+                    numberInCol.push(item!)
                 }
             }
         }
@@ -39,14 +39,14 @@ function checkSudoku(sudoku: string[][]): boolean {
 
     for (const [startRow, starCol] of blocks) {
         let numberInBlox: string[] = [];
-        for (const row in [startRow, startRow + 1, startRow + 2]) {
-            for (const col in [starCol, starCol + 1, starCol + 2]) {
-                const item = sudoku[row][col];
-                if (numberInBlox.includes(item)) {
+        for (const row in [startRow, startRow! + 1, startRow! + 2]) {
+            for (const col in [starCol, starCol! + 1, starCol! + 2]) {
+                const item = sudoku[row]![col];
+                if (numberInBlox.includes(item!)) {
                     return false;
                 } else {
                     if (item !== ".") {
-                        numberInBlox.push(item)
+                        numberInBlox.push(item!)
                     }
                 }
             }

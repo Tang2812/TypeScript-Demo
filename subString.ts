@@ -12,10 +12,10 @@ function findMaxLenghtSubString(s: string): number {
   let start = -1;
   let maxLenght = 0;
   for (let i = 0; i < s.length; i++) {
-    if (charMap.has(s[i])) {
-      start = Math.max(start, charMap.get(s[i])!);
+    if (charMap.has(s[i]!)) {
+      start = Math.max(start, charMap.get(s[i]!)!);
     }
-    charMap.set(s[i], i);
+    charMap.set(s[i]!, i);
     maxLenght = Math.max(maxLenght, i - start)
   }
   return maxLenght;
