@@ -1,8 +1,6 @@
 
 /**
  * function find the max substring whithout repeating characters
- * @param s
- * @returns
  */
 function findMaxLenghtSubString(s: string): number {
   if (s.length === 0) return 0;

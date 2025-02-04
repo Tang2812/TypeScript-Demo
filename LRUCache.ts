@@ -47,8 +47,6 @@ class LRUCache {
 
   /**
    * insert new  cache or update the cache, update most resent
-   * @param key
-   * @param value
    */
   put(key: number, value: number): void {
     if (this.cache.has(key)) {
